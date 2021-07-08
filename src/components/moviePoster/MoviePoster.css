@@ -1,0 +1,20 @@
+.poster {
+  margin: 15px;
+  width: 150px; 
+  word-wrap: break-word;
+ }
+ 
+ img {
+   height: 200px;
+   width: 150px;
+ }
+ 
+ h2 {
+  font-size: 1.5em;
+ }
+ 
+ h3 {
+   font-size: 1em;
+ }
+ 
+ /* hi */
