@@ -5,6 +5,7 @@ import movieData from './movieData.js';
 import MoviePoster from './components/moviePoster/MoviePoster';
 import Movies from './components/movies/Movies';
 import MovieDetail from './components/movieDetail/MovieDetail';
+import Header from './components/header/Header'
 
 class App extends Component {
   constructor() {
@@ -38,14 +39,10 @@ class App extends Component {
       this.setState({movies: movieData})
     }
 
-
-
     render() {
-      console.log(this.state.movies)
-      // this.fillArray()
       return(
         <main className='App'>
-          <h1>Rancid Tomatillos</h1>
+          <Header />
           { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
             <Movies 
             movies={this.state.movies} 
