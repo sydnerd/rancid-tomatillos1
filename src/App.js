@@ -9,8 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-      ],
+      movies: [],
+      movieID: 0
       // error: ''
     }
   }
@@ -24,6 +24,10 @@ class App extends Component {
     //   })
     //   .catch(() => this.setState({error: "Something went wrong!"}))
     // }
+
+    findMovie = id => {
+      this.setState({movieID: id})
+    }
     
     getMovies = (newMovie) => {
       this.setState({ movies: [...this.state.movies, newMovie] });
@@ -33,7 +37,9 @@ class App extends Component {
       return(
         <main className='App'>
           <h1>Rancid Tomatillos</h1>
+          { this.state.movieID ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : <Movies movies={this.state.movies} />}
           <Movies movies={this.state.movies} />
+          
           {/* {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading ideas ...</h2>
           }
