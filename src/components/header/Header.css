@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  justify-content: flex-start;
+}
+
+h1 {
+  justify-content: center;
+}

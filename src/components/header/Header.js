@@ -14,6 +14,7 @@ class Header extends Component {
       <header>
         <h1>Rancid Tomatillos</h1>
         <input
+          className = 'search'
           type='text'
           placeholder='search movies'
           name= 'searchInput'
