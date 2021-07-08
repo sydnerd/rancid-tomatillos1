@@ -3,7 +3,7 @@ import MoviePoster from '../moviePoster/MoviePoster'
 import './Movies.css';
 import movieData from '../../movieData';
 
-const Movies = () => {
+const Movies = ({findMovie}) => {
 let movies1 = movieData.movies
   const movieCards = movies1.map(movie => {
     return (
@@ -13,6 +13,7 @@ let movies1 = movieData.movies
         image={movie.poster_path}
         id={movie.id}
         key={movie.id}
+        findMovie={findMovie}
       />
     )
   })

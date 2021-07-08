@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import movieData from './movieData.js';
 import MoviePoster from './components/moviePoster/MoviePoster';
-import Movies from './components/movies/Movies'
+import Movies from './components/movies/Movies';
+import MovieDetail from './components/movieDetail/MovieDetail';
 
 class App extends Component {
   constructor() {
@@ -25,7 +26,7 @@ class App extends Component {
     //   .catch(() => this.setState({error: "Something went wrong!"}))
     // }
 
-    findMovie = id => {
+    findMovie = (id) => {
       this.setState({movieID: id})
     }
     
@@ -37,9 +38,11 @@ class App extends Component {
       return(
         <main className='App'>
           <h1>Rancid Tomatillos</h1>
-          { this.state.movieID ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : <Movies movies={this.state.movies} />}
-          <Movies movies={this.state.movies} />
-          
+          { this.state.movieID ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : 
+            <Movies 
+            movies={this.state.movies} 
+            findMovie = {this.findMovie}/>
+          }
           {/* {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading ideas ...</h2>
           }
