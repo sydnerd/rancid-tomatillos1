@@ -3,14 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import movieData from './movieData.js';
 import MoviePoster from './components/moviePoster/MoviePoster';
-import Movies from './components/movies/Movies'
+import Movies from './components/movies/Movies';
+import MovieDetail from './components/movieDetail/MovieDetail';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-      ],
+      movies: [],
+      movieID: 0
       // error: ''
     }
   }
@@ -24,16 +25,32 @@ class App extends Component {
     //   })
     //   .catch(() => this.setState({error: "Something went wrong!"}))
     // }
+
+    findMovie = (id) => {
+      this.setState({movieID: id})
+    }
     
     getMovies = (newMovie) => {
       this.setState({ movies: [...this.state.movies, newMovie] });
     }
 
+    componentDidMount() {
+      this.setState({movies: movieData})
+    }
+
+
+
     render() {
+      console.log(this.state.movies)
+      // this.fillArray()
       return(
         <main className='App'>
           <h1>Rancid Tomatillos</h1>
-          <Movies movies={this.state.movies} />
+          { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
+            <Movies 
+            movies={this.state.movies} 
+            findMovie = {this.findMovie}/>
+          }
           {/* {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading ideas ...</h2>
           }
