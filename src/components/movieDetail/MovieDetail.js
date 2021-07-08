@@ -3,28 +3,30 @@ import './MovieDetail.css';
 import movieData from '../../movieData';
 
 
-const MovieDetail = ({movie}) => {
-  return (
-    <section>
-      console.log(movie)
-      <h2>Title:</h2>
-    </section>
-  )
-}
-// const MovieDetail = ({movie}) => {
+// const MovieDetail = () => {
+  
+//   console.log(movieData.movies[0])
 //   return (
 //     <section>
-//       <h2>Title: {movie.title}</h2>
-//       <h3>Tagline: {movie.tagline}</h3>
-//       <p>Overview: {movie.overview}</p>
-//       <p>Genre: {movie.genres}</p>
-//       <p>Average Rating: {movie.average_rating}</p>
-//       <p>Budget: {movie.budget}</p>
-//       <p>Revenue: {movie.revenue}</p>
-//       <p>Runtime: {movie.runtime}</p>
-//       <p>Relase Date: {movie.release_date}</p>
+//       <h2>Title:</h2>
 //     </section>
 //   )
 // }
+const MovieDetail = ({movieInfo}) => {
+  return (
+    <section>
+      <button>CLICK ME TO RETURN</button>
+      <h2>Title: {movieInfo.title}</h2>
+      <h3>Tagline: {movieInfo.tagline}</h3>
+      <p>Overview: {movieInfo.overview}</p>
+      <p>Genre: {movieInfo.genres}</p>
+      <p>Average Rating: {movieInfo.average_rating}</p>
+      <p>Budget: {movieInfo.budget}</p>
+      <p>Revenue: {movieInfo.revenue}</p>
+      <p>Runtime: {movieInfo.runtime}</p>
+      <p>Relase Date: {movieInfo.release_date}</p>
+    </section>
+  )
+}
 
 export default MovieDetail;

@@ -34,11 +34,19 @@ class App extends Component {
       this.setState({ movies: [...this.state.movies, newMovie] });
     }
 
+    componentDidMount() {
+      this.setState({movies: movieData})
+    }
+
+
+
     render() {
+      console.log(this.state.movies)
+      // this.fillArray()
       return(
         <main className='App'>
           <h1>Rancid Tomatillos</h1>
-          { this.state.movieID ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : 
+          { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
             <Movies 
             movies={this.state.movies} 
             findMovie = {this.findMovie}/>
