@@ -1,12 +1,12 @@
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .search {
-  justify-content: flex-start;
-}
-
-h1 {
-  justify-content: center;
+  border-radius: 5px;
+  height: 20px;
+  margin-top: 25px;
+  margin-right: 10px;
+  background-color: white;
 }
