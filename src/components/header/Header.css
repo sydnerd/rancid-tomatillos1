@@ -11,7 +11,10 @@ header {
   background-color: white;
 }
 
-.home-button {
+.home-button,
+.home-image {
   height: 70px;
   width: 70;
+  border:none;
+  cursor: pointer;
 }

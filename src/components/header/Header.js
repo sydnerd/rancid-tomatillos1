@@ -5,7 +5,7 @@ import MyImage from './home.png';
 const Header = ({findMovie, renderMainPage}) => {
     return (
       <header>
-        {findMovie && <button className="home-button" onClick={renderMainPage}><img src={MyImage} /></button>}
+        {findMovie && <button className="home-button" onClick={renderMainPage}><img className="home-image" src={MyImage} /></button>}
         <h1>Rancid Tomatillos</h1>
         <input
           className = 'search'
