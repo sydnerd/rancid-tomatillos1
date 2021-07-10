@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-const Header = ({renderMainPage}) => {
+const Header = ({findMovie, renderMainPage}) => {
     return (
       <header>
         <h1>Rancid Tomatillos</h1>
@@ -13,7 +13,7 @@ const Header = ({renderMainPage}) => {
           // value={this.state.movies}
         />
         {/* <button>Test</button> */}
-        <button onClick={() => renderMainPage()}>CLICK ME TO RETURN</button>
+        {findMovie && <button onClick={renderMainPage}>HOME</button>}
       </header>
     )
 }

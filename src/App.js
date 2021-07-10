@@ -50,6 +50,7 @@ class App extends Component {
       return(
         <main className='App'>
           <Header className ='App-header' 
+          findMovie = {this.findMovie}
           renderMainPage = {this.renderMainPage}
           />
           { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
