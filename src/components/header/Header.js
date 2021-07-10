@@ -1,15 +1,7 @@
-import { React, Component } from 'react';
+import React from 'react';
 import './Header.css';
 
-class Header extends Component {
-  constructor () {
-    super();
-    this.state = {
-      searchInput: ''
-    }
-  }
-
-  render() {
+const Header = ({renderMainPage}) => {
     return (
       <header>
         <h1>Rancid Tomatillos</h1>
@@ -20,11 +12,10 @@ class Header extends Component {
           name= 'searchInput'
           // value={this.state.movies}
         />
+        {/* <button>Test</button> */}
+        <button onClick={() => renderMainPage()}>CLICK ME TO RETURN</button>
       </header>
     )
-  }
-  
 }
 
-// conditional rendering for the search and return button 
 export default Header;
