@@ -1,9 +1,11 @@
 import React from 'react';
 import './Header.css';
+import MyImage from './home.png';
 
 const Header = ({findMovie, renderMainPage}) => {
     return (
       <header>
+        {findMovie && <button className="home-button" onClick={renderMainPage}><img src={MyImage} /></button>}
         <h1>Rancid Tomatillos</h1>
         <input
           className = 'search'
@@ -13,7 +15,6 @@ const Header = ({findMovie, renderMainPage}) => {
           // value={this.state.movies}
         />
         {/* <button>Test</button> */}
-        {findMovie && <button onClick={renderMainPage}>HOME</button>}
       </header>
     )
 }

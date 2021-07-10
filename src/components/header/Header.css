@@ -10,3 +10,8 @@ header {
   margin-right: 10px;
   background-color: white;
 }
+
+.home-button {
+  height: 70px;
+  width: 70;
+}
