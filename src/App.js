@@ -27,6 +27,7 @@ class App extends Component {
     //   .catch(() => this.setState({error: "Something went wrong!"}))
     // }
 
+    
     findMovie = (id) => {
       this.setState({movieID: id})
     }
@@ -34,19 +35,29 @@ class App extends Component {
     getMovies = (newMovie) => {
       this.setState({ movies: [...this.state.movies, newMovie] });
     }
-
+    
     componentDidMount() {
       this.setState({movies: movieData})
+    }
+    
+    renderMainPage = () => {
+      console.log('clicked page button rendering')
+      // this.render()
+      this.setState({movieID: 0})
     }
 
     render() {
       return(
         <main className='App'>
-          <Header className ='App-header' />
+          <Header className ='App-header' 
+          findMovie = {this.findMovie}
+          renderMainPage = {this.renderMainPage}
+          />
           { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
             <Movies 
-            movies={this.state.movies} 
-            findMovie = {this.findMovie}/>
+            movies = {this.state.movies} 
+            findMovie = {this.findMovie}
+            />
           }
           {/* {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading ideas ...</h2>

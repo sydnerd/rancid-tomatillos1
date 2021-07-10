@@ -12,11 +12,13 @@ import movieData from '../../movieData';
 //     </section>
 //   )
 // }
+// {selectedDetails && <button onClick={clearSelection}>HOME</button>}
+
 const MovieDetail = ({movieInfo}) => {
   return (
     <section>
-      <button>CLICK ME TO RETURN</button>
-      <img src={movieInfo.backdrop_path}/>
+      
+      <img className="backdrop" src={movieInfo.backdrop_path}/>
       <h2>Title: {movieInfo.title}</h2>
       <h3>Tagline: {movieInfo.tagline}</h3>
       <p>Overview: {movieInfo.overview}</p>

@@ -10,3 +10,11 @@ header {
   margin-right: 10px;
   background-color: white;
 }
+
+.home-button,
+.home-image {
+  height: 70px;
+  width: 70;
+  border:none;
+  cursor: pointer;
+}

@@ -1,17 +1,11 @@
-import { React, Component } from 'react';
+import React from 'react';
 import './Header.css';
+import MyImage from './home.png';
 
-class Header extends Component {
-  constructor () {
-    super();
-    this.state = {
-      searchInput: ''
-    }
-  }
-
-  render() {
+const Header = ({findMovie, renderMainPage}) => {
     return (
       <header>
+        {findMovie && <button className="home-button" onClick={renderMainPage}><img className="home-image" src={MyImage} /></button>}
         <h1>Rancid Tomatillos</h1>
         <input
           className = 'search'
@@ -20,11 +14,9 @@ class Header extends Component {
           name= 'searchInput'
           // value={this.state.movies}
         />
+        {/* <button>Test</button> */}
       </header>
     )
-  }
-  
 }
 
-// conditional rendering for the search and return button 
 export default Header;
