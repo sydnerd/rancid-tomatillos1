@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import movieData from './movieData.js';
-import MoviePoster from './components/moviePoster/MoviePoster';
 import Movies from './components/movies/Movies';
 import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header'
@@ -12,8 +9,8 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movieID: 0
-      // error: ''
+      movieID: 0,
+      error: ''
     }
   }
 
@@ -22,7 +19,6 @@ class App extends Component {
       .then(response => response.json())
       .then(data=> {
         this.setState({movies: data.movies})
-        console.log(data, "This is our data array")
       })
       .catch(() => this.setState({error: "Something went wrong!"}))
     }
@@ -32,6 +28,7 @@ class App extends Component {
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({movieID: data.movie}))
+      .catch(() => this.setState({error: "Something went wrong!"}))
     }
     
     getMovies = (newMovie) => {
@@ -44,6 +41,11 @@ class App extends Component {
       this.setState({movieID: 0})
     }
 
+    // {this.state.error && <h3>{this.state.error}</h3>}
+    //     {!this.state.movies.length && !this.state.error && <h3>Loading...</h3>}
+    //     {
+    //       this.state.clickedMovie.id && !this.state.error ?
+          
     render() {
       return(
         <main className='App'>
@@ -52,19 +54,18 @@ class App extends Component {
           renderMainPage = {this.renderMainPage}
           />
           { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
-            // { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : 
             <Movies 
             movies = {this.state.movies} 
             findMovie = {this.findMovie}
             />
           }
-          {/* {!this.state.movies.length && !this.state.error.length &&
-            <h2>Loading ideas ...</h2>
+          {this.state.error && <h3>{this.state.error}</h3>}
+          {!this.state.movies.length && !this.state.error.length &&
+            <h2>Loading movies ...</h2>
           }
           {!!this.state.error.length && 
           <h2>{this.state.error}</h2>
           }
-          <Ideas ideas={this.state.ideas} deleteIdea={this.deleteIdea} /> */}
         </main>
       )
     };
