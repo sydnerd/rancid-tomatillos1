@@ -26,10 +26,12 @@ class App extends Component {
       })
       .catch(() => this.setState({error: "Something went wrong!"}))
     }
-
     
     findMovie = (id) => {
-      this.setState({movieID: id})
+      // this.setState({movieID: id})
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => {if (response.ok) {return response.json()}})
+      .then(data => this.setState({movieID: data.movie}))
     }
     
     getMovies = (newMovie) => {
@@ -49,7 +51,8 @@ class App extends Component {
           findMovie = {this.findMovie}
           renderMainPage = {this.renderMainPage}
           />
-          { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.movies.find(movie => movie.id === this.state.movieID)}/> : 
+          { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
+            // { this.state.movieID ? <MovieDetail movieInfo={this.state.movies.find(movie => movie.id === this.state.movieID)}/> : 
             <Movies 
             movies = {this.state.movies} 
             findMovie = {this.findMovie}

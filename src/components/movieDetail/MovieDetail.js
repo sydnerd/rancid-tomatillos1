@@ -4,9 +4,9 @@ import movieData from '../../movieData';
 
 
 const MovieDetail = ({movieInfo}) => {
+  console.log(movieInfo)
   return (
-    <section>
-      
+    <section> 
       <img className="backdrop" src={movieInfo.backdrop_path}/>
       <h2>Title: {movieInfo.title}</h2>
       <h3>Tagline: {movieInfo.tagline}</h3>
