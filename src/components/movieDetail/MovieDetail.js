@@ -1,6 +1,5 @@
 import React from 'react';
 import './MovieDetail.css';
-import movieData from '../../movieData';
 
 
 const MovieDetail = ({movieInfo}) => {

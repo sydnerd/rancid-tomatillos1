@@ -24,7 +24,6 @@ class App extends Component {
     }
     
     findMovie = (id) => {
-      // this.setState({movieID: id})
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({movieID: data.movie}))
@@ -36,15 +35,8 @@ class App extends Component {
     }
     
     renderMainPage = () => {
-      console.log('clicked page button rendering')
-      // this.render()
       this.setState({movieID: 0})
     }
-
-    // {this.state.error && <h3>{this.state.error}</h3>}
-    //     {!this.state.movies.length && !this.state.error && <h3>Loading...</h3>}
-    //     {
-    //       this.state.clickedMovie.id && !this.state.error ?
           
     render() {
       return(
@@ -59,7 +51,6 @@ class App extends Component {
             findMovie = {this.findMovie}
             />
           }
-          {this.state.error && <h3>{this.state.error}</h3>}
           {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading movies ...</h2>
           }
