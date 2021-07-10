@@ -3,17 +3,6 @@ import './MovieDetail.css';
 import movieData from '../../movieData';
 
 
-// const MovieDetail = () => {
-  
-//   console.log(movieData.movies[0])
-//   return (
-//     <section>
-//       <h2>Title:</h2>
-//     </section>
-//   )
-// }
-// {selectedDetails && <button onClick={clearSelection}>HOME</button>}
-
 const MovieDetail = ({movieInfo}) => {
   return (
     <section>

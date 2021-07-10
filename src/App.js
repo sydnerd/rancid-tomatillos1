@@ -17,15 +17,15 @@ class App extends Component {
     }
   }
 
-    // componentDidMount() {
-    //   fetch('http://localhost:3001/api/v1/ideas')
-    //   .then(response => response.json())
-    //   .then(data=> {
-    //     this.setState({ideas: data})
-    //     console.log(data, "This is our data array")
-    //   })
-    //   .catch(() => this.setState({error: "Something went wrong!"}))
-    // }
+    componentDidMount() {
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data=> {
+        this.setState({movies: data.movies})
+        console.log(data, "This is our data array")
+      })
+      .catch(() => this.setState({error: "Something went wrong!"}))
+    }
 
     
     findMovie = (id) => {
@@ -34,10 +34,6 @@ class App extends Component {
     
     getMovies = (newMovie) => {
       this.setState({ movies: [...this.state.movies, newMovie] });
-    }
-    
-    componentDidMount() {
-      this.setState({movies: movieData})
     }
     
     renderMainPage = () => {
