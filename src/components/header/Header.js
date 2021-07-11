@@ -14,7 +14,6 @@ const Header = ({findMovie, renderMainPage}) => {
           name= 'searchInput'
           // value={this.state.movies}
         />
-        {/* <button>Test</button> */}
       </header>
     )
 }
