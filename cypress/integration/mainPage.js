@@ -8,15 +8,15 @@ describe('Main Page rendering', () => {
     })
     cy.visit('http://localhost:3000');
   });
-  // it('Should be able to visit the page and render the header, home button, and search bar', () => {
-  //   cy.get('h1')
-  //     .contains('Rancid Tomatillos')
-  //   cy.get('input[type="text"]')
-  //   cy.get('button').click()
-  // });
+  it('Should be able to visit the page and render the header, home button, and search bar', () => {
+    cy.get('.siteTitle')
+      .contains('Rancid Tomatillos')
+    cy.get('input[type="text"]')
+    cy.get('button').click()
+  });
   it('Should have a container that holds all the movie posters', () => {
-    // cy.get('.movies-containers').should('have.length', '2')
-    cy.get('.poster').should('have.length', '2')
-    // cy.get('.poster')
+    cy.get('.poster').should('have.length', '3')
   })
 });
+
+//should have movie with image title and rating
