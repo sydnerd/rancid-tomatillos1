@@ -1,11 +1,9 @@
 import React from 'react';
 import MoviePoster from '../moviePoster/MoviePoster'
 import './Movies.css';
-import movieData from '../../movieData';
 
-const Movies = ({findMovie}) => {
-let movies1 = movieData.movies
-  const movieCards = movies1.map(movie => {
+const Movies = ({findMovie, movies}) => {
+  const movieCards = movies.map(movie => {
     return (
       <MoviePoster
         title={movie.title}
