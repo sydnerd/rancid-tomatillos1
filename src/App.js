@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Movies from './components/movies/Movies';
 import MovieDetail from './components/movieDetail/MovieDetail';
-import Header from './components/header/Header'
+import Header from './components/header/Header';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -57,6 +58,9 @@ class App extends Component {
           {!!this.state.error.length && 
           <h2>{this.state.error}</h2>
           }
+          <Route exact path="/" render={({ match}) => {
+            return <Movies findMovie movies={this.state.movies}/>
+          }}/>
         </main>
       )
     };
