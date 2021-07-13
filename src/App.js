@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Movies from './components/movies/Movies';
+import MoviePoster from './components/moviePoster/MoviePoster';
 import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
 import { Route } from 'react-router-dom';
@@ -44,22 +45,26 @@ class App extends Component {
         <main className='App'>
           <Header className ='App-header' 
           findMovie = {this.findMovie}
-          renderMainPage = {this.renderMainPage}
+          // renderMainPage = {this.renderMainPage}
           />
-          { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
+          {/* { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
             <Movies 
             movies = {this.state.movies} 
             findMovie = {this.findMovie}
             />
-          }
+          } */}
           {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading movies ...</h2>
           }
           {!!this.state.error.length && 
           <h2>{this.state.error}</h2>
           }
-          <Route exact path="/" render={({ match}) => {
+          <Route exact path="/" render={({ match }) => {
+            console.log("match-home", match)
             return <Movies findMovie movies={this.state.movies}/>
+          }}/>
+          <Route path={`/:id`}  render={({ match }) => {
+            return <MovieDetail movieInfo = {this.state.movieID} />
           }}/>
         </main>
       )
