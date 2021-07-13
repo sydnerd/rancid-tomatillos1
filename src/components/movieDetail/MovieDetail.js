@@ -3,7 +3,6 @@ import './MovieDetail.css';
 
 
 const MovieDetail = ({movieInfo}) => {
-  console.log(movieInfo)
   return (
     <section> 
       <img className="backdrop" src={movieInfo.backdrop_path}/>
@@ -11,7 +10,7 @@ const MovieDetail = ({movieInfo}) => {
       <h3>{movieInfo.tagline}</h3>
       <p>{movieInfo.overview}</p>
       <p>Genre: {movieInfo.genres}</p>
-      <p>Average Rating: {movieInfo.average_rating.toFixed(2)}</p>
+      <p>Average Rating: {movieInfo.average_rating}</p>
       <p>Budget: ${movieInfo.budget}</p>
       <p>Revenue: ${movieInfo.revenue}</p>
       <p>Runtime: {movieInfo.runtime} min</p>
