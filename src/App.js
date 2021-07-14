@@ -29,6 +29,8 @@ class App extends Component {
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({movieID: data.movie}))
+      .then(console.log(this.state.movieID, ' :this.state.movieID isndie app.js'))
+      .then(console.log('findmovie inside fetch call working'))
       .catch(() => this.setState({error: "Something went wrong!"}))
     }
     
@@ -41,6 +43,7 @@ class App extends Component {
     }
           
     render() {
+      // debugger
       return(
         <main className='App'>
           <Header className ='App-header' 
@@ -60,11 +63,15 @@ class App extends Component {
           <h2>{this.state.error}</h2>
           }
           <Route exact path="/" render={({ match }) => {
-            console.log("match-home", match)
-            return <Movies findMovie movies={this.state.movies}/>
+            // console.log("match-home", match)
+            return <Movies findMovie={this.findMovie} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={({ match }) => {
+            console.log(match.params.id, ' :match inside app.js')
+            console.log(this.state.movieID, ' :this.state.movieID inside app.js');
+            // this.state.movieID = path
             return <MovieDetail movieInfo = {this.state.movieID} />
+            // return <MovieDetail movieInfo = {this.state.movies.findMovie(this.state.movieID)} />
           }}/>
         </main>
       )
