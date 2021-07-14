@@ -67,6 +67,6 @@ class App extends Component {
       )
     };
 }
-  
+  // fetch data and send into cleaning function, then set state with the cleaned data
 
 export default App;

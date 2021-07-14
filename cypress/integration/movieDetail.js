@@ -9,9 +9,10 @@ describe('Movie detail page rendering', () => {
       cy.get('#694919').click()
       cy.url()
     })
-    // it('Should have movie details when you click a poster', () => {
-    //   cy.get('section[class="movie-detail-section"]').find(".backdrop").should('be.visible')
-    // })
+    it('Should have movie details when you click a poster', () => {
+      cy.visit('http://localhost:3000/694919')
+      cy.get('section[class="movie-detail-section"]').find(".backdrop").should('be.visible')
+    })
   // it('Should be able to visit the page and render the header, home button, and search bar', () => {
   //   cy.get('.siteTitle')
   //     .contains('Rancid Tomatillos')
