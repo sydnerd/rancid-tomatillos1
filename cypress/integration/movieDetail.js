@@ -1,14 +1,17 @@
 describe('Movie detail page rendering', () => {
   beforeEach(() => {
     cy.fixture('movieDetailMockData').then((testMovieDetail) => {
-      cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', testMovieDetail)
+      cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/', testMovieDetail)
     })
-    cy.visit('http://localhost:3000');
-    cy.get('.movies-container).get('#694919').click()
   });
-    it('Should have movie details when you click a poster', () => {
-      cy.get('section[class="movie-detail-section"]').find(".backdrop").should('be.visible')
+    it('Should go to movies detail page on click', () => {
+      cy.visit('http://localhost:3000/');
+      cy.get('#694919').click()
+      cy.url()
     })
+    // it('Should have movie details when you click a poster', () => {
+    //   cy.get('section[class="movie-detail-section"]').find(".backdrop").should('be.visible')
+    // })
   // it('Should be able to visit the page and render the header, home button, and search bar', () => {
   //   cy.get('.siteTitle')
   //     .contains('Rancid Tomatillos')

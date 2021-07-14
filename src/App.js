@@ -4,7 +4,7 @@ import Movies from './components/movies/Movies';
 import MoviePoster from './components/moviePoster/MoviePoster';
 import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -73,6 +73,7 @@ class App extends Component {
             return <MovieDetail movieInfo = {this.state.movieID} />
             // set up rerender on load here
           }}/>
+          <Redirect to={'/'} />
         </main>
       )
     };
