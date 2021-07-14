@@ -1,5 +1,3 @@
-// import MoviePoster from "../../src/components/moviePoster/MoviePoster";
-
 describe('Main Page rendering', () => {
   beforeEach(() => {
     cy.fixture('movieListMockData').then((testMovieList) => {

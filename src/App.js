@@ -71,7 +71,7 @@ class App extends Component {
             console.log(this.state.movieID, ' :this.state.movieID inside app.js');
             // this.state.movieID = path
             return <MovieDetail movieInfo = {this.state.movieID} />
-            // return <MovieDetail movieInfo = {this.state.movies.findMovie(this.state.movieID)} />
+            // set up rerender on load here
           }}/>
         </main>
       )
