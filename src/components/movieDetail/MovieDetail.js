@@ -3,6 +3,7 @@ import './MovieDetail.css';
 
 
 const MovieDetail = ({movieInfo}) => {
+  console.log('movieInfo in movieDetails: ', movieInfo);
   return (
     <section> 
       <img className="backdrop" src={movieInfo.backdrop_path}/>
