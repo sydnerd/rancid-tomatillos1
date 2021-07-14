@@ -43,19 +43,11 @@ class App extends Component {
     }
           
     render() {
-      // debugger
       return(
         <main className='App'>
           <Header className ='App-header' 
           findMovie = {this.findMovie}
-          // renderMainPage = {this.renderMainPage}
           />
-          {/* { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
-            <Movies 
-            movies = {this.state.movies} 
-            findMovie = {this.findMovie}
-            />
-          } */}
           {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading movies ...</h2>
           }
@@ -63,15 +55,12 @@ class App extends Component {
           <h2>{this.state.error}</h2>
           }
           <Route exact path="/" render={({ match }) => {
-            // console.log("match-home", match)
             return <Movies findMovie={this.findMovie} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={({ match }) => {
             console.log(match.params.id, ' :match inside app.js')
             console.log(this.state.movieID, ' :this.state.movieID inside app.js');
-            // this.state.movieID = path
             return <MovieDetail movieInfo = {this.state.movieID} />
-            // set up rerender on load here
           }}/>
           <Redirect to={'/'} />
         </main>
