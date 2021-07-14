@@ -70,7 +70,7 @@ class App extends Component {
             console.log(match.params.id, ' :match inside app.js')
             console.log(this.state.movieID, ' :this.state.movieID inside app.js');
             // this.state.movieID = path
-            return <MovieDetail movieInfo = {match.params.id} />
+            return <MovieDetail movieInfo = {this.state.movieID} />
             // return <MovieDetail movieInfo = {this.state.movies.findMovie(this.state.movieID)} />
           }}/>
         </main>
