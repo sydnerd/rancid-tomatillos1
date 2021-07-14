@@ -3,7 +3,8 @@ import './MovieDetail.css';
 
 
 const MovieDetail = ({movieInfo}) => {
-  console.log('movieInfo in movieDetails: ', movieInfo);
+  console.log('movieInfo in movieDetails: ', movieInfo.average_rating);
+  let averageRating = movieInfo.average_rating
   return (
     <section> 
       <img className="backdrop" src={movieInfo.backdrop_path}/>
@@ -11,7 +12,7 @@ const MovieDetail = ({movieInfo}) => {
       <h3>{movieInfo.tagline}</h3>
       <p>{movieInfo.overview}</p>
       <p>Genre: {movieInfo.genres}</p>
-      <p>Average Rating: {movieInfo.average_rating}</p>
+      <p>Average Rating: {averageRating}</p>
       <p>Budget: ${movieInfo.budget}</p>
       <p>Revenue: ${movieInfo.revenue}</p>
       <p>Runtime: {movieInfo.runtime} min</p>

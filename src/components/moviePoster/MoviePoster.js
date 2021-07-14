@@ -9,8 +9,8 @@ const MoviePoster = ({title, rating, image, findMovie, id}) => {
       {/* <div className="poster"> */}
       <div className="poster" onClick={() => findMovie(id)}>
         <img className="movie-poster" src={image}/>
-        <h2>{title}</h2>
-        <h3>{rating}</h3>
+        <h2 className='movie-poster-title'>{title}</h2>
+        <h3 className='movie-poster-rating'>{rating.toFixed(1)}</h3>
       </div>
     </Link>
   )
