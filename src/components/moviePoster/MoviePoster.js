@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './MoviePoster.css';
 
 const MoviePoster = ({title, rating, image, findMovie, id}) => {
-  console.log(id, ' :ID inside MoviePoster.js')
+  // console.log(id, ' :ID inside MoviePoster.js')
   return (
     <Link to={`/${id}`}>
       <div className="poster" id={id} onClick={() => findMovie(id)}>

@@ -9,10 +9,26 @@ describe('Movie detail page rendering', () => {
       cy.get('#694919').click()
       cy.url()
     })
-    // it('Should have movie details when you click a poster', () => {
-    //   cy.visit('http://localhost:3000/694919')
-    //   cy.get('.backdrop').find(".backdrop").contains('https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg')
-    // })
+    it('Should have movie detailse when you click a poster', () => {
+      cy.visit('http://localhost:3000/');
+      cy.get('#694919').click()
+      cy.get('.movie-detail-section')
+        .get(".backdrop").should('exist').should('be.visible')
+        .get('.title').should('exist').contains('Money Plane')
+        .get('.overview').should('exist').contains("A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")
+        .get('.genre').should('exist').contains('Action')
+        .get('.budget').should('exist').contains(0)
+        .get('.runtime').should('exist').contains(82)
+    })
+    it('Should have movie details when you click a poster', () => {
+      cy.visit('http://localhost:3000/');
+      cy.get('#694919').click()
+      cy.get('.movie-detail-section').find(".backdrop")
+        .should('exist')
+        .should('be.visible')
+        // cy.get('.movie-detail-section').find(".backdrop")
+        // .should('exist')
+    })
   // it('Should be able to visit the page and render the header, home button, and search bar', () => {
   //   cy.get('.siteTitle')
   //     .contains('Rancid Tomatillos')
