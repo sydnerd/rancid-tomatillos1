@@ -1,8 +1,5 @@
-// import MoviePoster from "../../src/components/moviePoster/MoviePoster";
-
 describe('Main Page rendering', () => {
   beforeEach(() => {
-    // cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'movieListMockData'});
     cy.fixture('movieListMockData').then((testMovieList) => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', testMovieList)
     })
@@ -15,8 +12,12 @@ describe('Main Page rendering', () => {
     cy.get('button').click()
   });
   it('Should have a container that holds all the movie posters', () => {
-    cy.get('.poster').should('have.length', '3')
+    cy.get('.poster').should('have.length', '3');
+    cy.get('.poster').should('exist')
+  })
+  it('Should have movie poster with image, title, and rating', () => {
+    cy.get('div[class="movies-container"]').find(".movie-poster").should('be.visible');
+    cy.get('div[class="movies-container"]').find(".movie-poster-title").should('be.visible');
+    cy.get('div[class="movies-container"]').find(".movie-poster-rating").should('be.visible')
   })
 });
-
-//should have movie with image title and rating

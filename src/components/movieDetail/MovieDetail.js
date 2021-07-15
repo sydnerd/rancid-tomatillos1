@@ -3,19 +3,20 @@ import './MovieDetail.css';
 
 
 const MovieDetail = ({movieInfo}) => {
-  console.log('movieInfo in movieDetails: ', movieInfo);
+  console.log('movieInfo in movieDetails: ', movieInfo.average_rating);
+  let averageRating = movieInfo.average_rating
   return (
-    <section> 
+    <section className='movie-detail-section'> 
       <img className="backdrop" src={movieInfo.backdrop_path}/>
-      <h2>{movieInfo.title}</h2>
-      <h3>{movieInfo.tagline}</h3>
-      <p>{movieInfo.overview}</p>
-      <p>Genre: {movieInfo.genres}</p>
-      <p>Average Rating: {movieInfo.average_rating}</p>
-      <p>Budget: ${movieInfo.budget}</p>
-      <p>Revenue: ${movieInfo.revenue}</p>
-      <p>Runtime: {movieInfo.runtime} min</p>
-      <p>Relase Date: {movieInfo.release_date}</p>
+      <h2 className="title">{movieInfo.title}</h2>
+      <h3 className="tagline">{movieInfo.tagline}</h3>
+      <p className="overview">{movieInfo.overview}</p>
+      <p className="genre">Genre: {movieInfo.genres}</p>
+      <p className="average-rating">Average Rating: {averageRating}</p>
+      <p className="budget">Budget: ${movieInfo.budget}</p>
+      <p className="revenue">Revenue: ${movieInfo.revenue}</p>
+      <p className="runtime">Runtime: {movieInfo.runtime} min</p>
+      <p className="release-date">Relase Date: {movieInfo.release_date}</p>
     </section>
   )
 }

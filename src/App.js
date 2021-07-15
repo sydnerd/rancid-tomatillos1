@@ -4,7 +4,7 @@ import Movies from './components/movies/Movies';
 import MoviePoster from './components/moviePoster/MoviePoster';
 import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -43,19 +43,11 @@ class App extends Component {
     }
           
     render() {
-      // debugger
       return(
         <main className='App'>
           <Header className ='App-header' 
           findMovie = {this.findMovie}
-          // renderMainPage = {this.renderMainPage}
           />
-          {/* { this.state.movieID ? <MovieDetail movieInfo={this.state.movieID}/> : 
-            <Movies 
-            movies = {this.state.movies} 
-            findMovie = {this.findMovie}
-            />
-          } */}
           {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading movies ...</h2>
           }
@@ -63,20 +55,18 @@ class App extends Component {
           <h2>{this.state.error}</h2>
           }
           <Route exact path="/" render={({ match }) => {
-            // console.log("match-home", match)
             return <Movies findMovie={this.findMovie} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={({ match }) => {
             console.log(match.params.id, ' :match inside app.js')
             console.log(this.state.movieID, ' :this.state.movieID inside app.js');
-            // this.state.movieID = path
             return <MovieDetail movieInfo = {this.state.movieID} />
-            // return <MovieDetail movieInfo = {this.state.movies.findMovie(this.state.movieID)} />
           }}/>
+          <Redirect to={'/'} />
         </main>
       )
     };
 }
-  
+  // fetch data and send into cleaning function, then set state with the cleaned data
 
 export default App;
