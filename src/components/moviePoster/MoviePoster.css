@@ -1,3 +1,5 @@
+/* @import './Movies.css'; */
+
 .poster{
   margin: 15px;
   width: 150px; 
@@ -9,9 +11,11 @@
   height: 200px;
   width: 150px;
   border: 2px solid white;
- }
+}
 
- .movie-poster:hover{
-  height: 250px;
-  width: 2000px;
- }
+.movie-poster:hover{
+  /* transition: 1s; */
+  transform: scale(2);
+  border: 2px solid grey;
+  /* opacity: 1; */
+}

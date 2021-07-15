@@ -58,8 +58,8 @@ class App extends Component {
             return <Movies findMovie={this.findMovie} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={({ match }) => {
-            console.log(match.params.id, ' :match inside app.js')
-            console.log(this.state.movieID, ' :this.state.movieID inside app.js');
+            // console.log(match.params.id, ' :match inside app.js')
+            // console.log(this.state.movieID, ' :this.state.movieID inside app.js');
             return <MovieDetail movieInfo = {this.state.movieID} />
           }}/>
           <Redirect to={'/'} />

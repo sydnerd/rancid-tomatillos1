@@ -1,6 +1,7 @@
 header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .search {
@@ -14,6 +15,7 @@ header {
 
 .home-button,
 .home-image {
+  margin: 10px 0px 0px 10px;
   height: 70px;
   width: 70;
   border:none;

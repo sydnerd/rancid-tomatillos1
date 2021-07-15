@@ -1,4 +1,11 @@
+.movie-detail-section {
+  display:flex;
+}
+
+/* .movie-detail-backdrop {
+  display: flex
+} */
 .backdrop {
-  width: 100%;
-  height: 100%;
+  width: 700px;
+  margin-left: 10px;
 }
