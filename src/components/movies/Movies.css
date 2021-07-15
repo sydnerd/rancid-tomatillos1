@@ -1,3 +1,5 @@
+/* @import './MoviePoster.css'; */
+
 .movies-container {
   padding: 20px;
   display: flex;
@@ -5,3 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ul:hover li{
+  opacity:0.5;
+} */
+/* 
+.movies-container:hover .movie-poster{
+  opacity: 0.5;
+} */
