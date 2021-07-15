@@ -8,8 +8,6 @@ const MoviePoster = ({title, rating, image, findMovie, id}) => {
     <Link to={`/${id}`}>
       <div className="poster" id={id} onClick={() => findMovie(id)}>
         <img className="movie-poster" src={image}/>
-        <h2 className='movie-poster-title'>{title}</h2>
-        <h3 className='movie-poster-rating'>{rating.toFixed(1)}</h3>
       </div>
     </Link>
   )

@@ -3,7 +3,7 @@ import './MovieDetail.css';
 
 
 const MovieDetail = ({movieInfo}) => {
-  console.log('movieInfo in movieDetails: ', movieInfo.average_rating);
+  // console.log('movieInfo in movieDetails: ', movieInfo.average_rating);
   let averageRating = movieInfo.average_rating
   return (
     <section className='movie-detail-section'> 

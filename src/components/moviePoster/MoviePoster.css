@@ -10,14 +10,8 @@
   width: 150px;
   border: 2px solid white;
  }
- 
- h2 {
-  font-size: 1.5em;
-  text-decoration: none;
+
+ .movie-poster:hover{
+  height: 250px;
+  width: 2000px;
  }
- 
- h3 {
-   font-size: 1em;
-   text-decoration: none;
- }
- 
