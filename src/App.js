@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import './App.css';
 import Movies from './components/movies/Movies';
 import MoviePoster from './components/moviePoster/MoviePoster';
@@ -16,7 +16,7 @@ class App extends Component {
       error: ''
     }
   }
-
+  
     componentDidMount() {
       fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
@@ -33,12 +33,29 @@ class App extends Component {
     renderMainPage = () => {
       this.setState({movieID: 0})
     }
-    
+
+    // updateMovieID = () => {
+    //   // console.log(id, ' :<<<<<<<<<id inside updateMovieId function App.js')
+    //   // this.setState({movieID: id})
+    //   findMovie(718444)
+    //     .then(data => console.log(data,' :<<<<<><><<><>data inside updateMovieID function App.js'))
+    //     .then(data => this.setState({movieID: data.movie}))
+    // }
+
+    updateMovieID = (id) => {
+      // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      // .then(response => {if (response.ok) {return response.json()}})
+      findMovie(id)
+        .then(data => console.log(data.movie,' :data inside UPDATE<<<<<<<<>>>>>'))
+        .then(data => this.setState({movieID: data}))
+      // .catch(() => this.setState({error: "Something went wrong!"}))
+    }
+
     render() {
       return(
         <main className='App'>
           <Header className ='App-header' 
-          findMovie = {findMovie}
+          findMovie = {this.findMovie}
           />
           {!this.state.movies.length && !this.state.error.length &&
             <h2>Loading movies ...</h2>
@@ -47,10 +64,10 @@ class App extends Component {
             <h2>{this.state.error}</h2>
           }
           <Route exact path="/" render={ () => {
-            return <Movies findMovie={findMovie} movies={this.state.movies}/>
+            return <Movies findMovie={this.updateMovieID} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={ () => {
-            return <MovieDetail movieInfo = {this.state.movieID} />
+            return <MovieDetail updateMovieID = {this.state.movieID} />
           }}/>
           <Redirect to={'/'} />
         </main>

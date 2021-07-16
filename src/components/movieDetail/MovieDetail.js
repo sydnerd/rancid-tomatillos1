@@ -6,7 +6,7 @@ const MovieDetail = ({movieInfo}) => {
   let budget = movieInfo.budget ? `Budget: $${movieInfo.budget}` : false
   let revenue = movieInfo.revenue ? `Revenue: $${movieInfo.revenue}` : false
 
- console.log(movieInfo,'<<<<')
+ console.log(movieInfo,' :movieInfo insdie MovieDetails.js')
 
   return (
     <section className='movie-detail-section'> 
