@@ -1,11 +1,11 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Movies from './components/movies/Movies';
 import MoviePoster from './components/moviePoster/MoviePoster';
 import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
 import { Route, Redirect } from 'react-router-dom';
-import { findMovie } from './components/ApiCalls'
+import { findMovie, allMovies } from './components/ApiCalls'
 
 class App extends Component {
   constructor() {
@@ -18,8 +18,7 @@ class App extends Component {
   }
   
     componentDidMount() {
-      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+      allMovies()
       .then(data=> {
         this.setState({movies: data.movies})
       })
@@ -47,7 +46,7 @@ class App extends Component {
       // .then(response => {if (response.ok) {return response.json()}})
       findMovie(id)
         .then(data => this.setState({movieID: data.movie}))
-      // .catch(() => this.setState({error: "Something went wrong!"}))
+        .catch(() => this.setState({error: "Something went wrong!"}))
     }
 
     render() {
