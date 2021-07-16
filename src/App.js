@@ -46,8 +46,7 @@ class App extends Component {
       // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       // .then(response => {if (response.ok) {return response.json()}})
       findMovie(id)
-        .then(data => console.log(data.movie,' :data inside UPDATE<<<<<<<<>>>>>'))
-        .then(data => this.setState({movieID: data}))
+        .then(data => this.setState({movieID: data.movie}))
       // .catch(() => this.setState({error: "Something went wrong!"}))
     }
 
@@ -67,7 +66,7 @@ class App extends Component {
             return <Movies findMovie={this.updateMovieID} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={ () => {
-            return <MovieDetail updateMovieID = {this.state.movieID} />
+            return <MovieDetail movieInfo = {this.state.movieID} />
           }}/>
           <Redirect to={'/'} />
         </main>
