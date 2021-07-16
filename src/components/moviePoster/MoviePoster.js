@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './MoviePoster.css';
+// import { findMovie } from './components/ApiCalls'
 
 const MoviePoster = ({title, rating, image, findMovie, id}) => {
   // console.log(id, ' :ID inside MoviePoster.js')
