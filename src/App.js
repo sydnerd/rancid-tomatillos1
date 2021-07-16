@@ -6,6 +6,7 @@ import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
 import { Route, Redirect } from 'react-router-dom';
 import { findMovie, allMovies } from './components/ApiCalls'
+import {formatMovieDetails} from './components/Utils'
 
 class App extends Component {
   constructor() {
@@ -26,6 +27,7 @@ class App extends Component {
     }
     
     getMovies = (newMovie) => {
+      console.log("get movies")
       this.setState({ movies: [...this.state.movies, newMovie] });
     }
     
@@ -33,21 +35,21 @@ class App extends Component {
       this.setState({movieID: 0})
     }
 
-    // updateMovieID = () => {
-    //   // console.log(id, ' :<<<<<<<<<id inside updateMovieId function App.js')
-    //   // this.setState({movieID: id})
-    //   findMovie(718444)
-    //     .then(data => console.log(data,' :<<<<<><><<><>data inside updateMovieID function App.js'))
-    //     .then(data => this.setState({movieID: data.movie}))
-    // }
+    
 
     updateMovieID = (id) => {
-      // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      // .then(response => {if (response.ok) {return response.json()}})
       findMovie(id)
         .then(data => this.setState({movieID: data.movie}))
+        // .then(data => formatMovieDetails(data.movie.genres))
+        // .then(helperFunction = () => {
+        //   this.setState(formatMovieDetails(this.state.movieID))
+        // })
         .catch(() => this.setState({error: "Something went wrong!"}))
     }
+    
+    // helperFunction = () => {
+    //   this.setState(formatMovieDetails(this.state.movieID))
+    // }
 
     render() {
       return(
@@ -65,6 +67,7 @@ class App extends Component {
             return <Movies findMovie={this.updateMovieID} movies={this.state.movies}/>
           }}/>
           <Route path={`/:id`}  render={ () => {
+            console.log(this.state.movieID, 'this.state.movieID in movie detail in app.js')
             return <MovieDetail movieInfo = {this.state.movieID} />
           }}/>
           <Redirect to={'/'} />
