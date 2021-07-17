@@ -19,3 +19,9 @@
 .overview {
   font-style: italic;
 }
+
+.tagline {
+  color: red;
+  font-size: 1em;
+  font-style: italic;
+}
