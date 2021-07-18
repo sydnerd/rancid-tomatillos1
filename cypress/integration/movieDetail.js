@@ -7,9 +7,8 @@ describe('Movie detail page rendering', () => {
     })
   });
     it('Should render a header', () => {
-      cy.get('.siteTitle')
+      cy.get('.site-title')
         .contains('Rancid Tomatillos')
-      cy.get('input[type="text"]')
       cy.get('button').click()
     })
     it('Should redirect you to home page', () => {
@@ -25,7 +24,6 @@ describe('Movie detail page rendering', () => {
         .get('.title').should('exist').contains('Money Plane')
         .get('.overview').should('exist').contains("A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")
         .get('.genre').should('exist').contains('Action')
-        .get('.budget').should('exist').contains(0)
         .get('.runtime').should('exist').contains(82)
     })
   })

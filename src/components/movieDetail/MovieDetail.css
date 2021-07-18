@@ -14,11 +14,11 @@
 .title {
   display: flex;
   justify-content: center;
+  text-decoration: underline;
 }
 
 .overview {
   font-style: italic;
-  font-size: .75em;
 }
 
 .tagline {
