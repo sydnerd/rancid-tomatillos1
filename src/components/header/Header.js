@@ -12,13 +12,6 @@ const Header = ({findMovie, renderMainPage}) => {
           </button>
         </Link>
         <h1 className="site-title">Rancid Tomatillos</h1>
-        {/* <input
-          className = 'search'
-          type='text'
-          placeholder='search movies'
-          name= 'searchInput'
-          value={this.state.movies}
-        /> */}
       </header>
   )
 }

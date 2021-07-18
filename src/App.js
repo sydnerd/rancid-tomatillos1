@@ -5,8 +5,6 @@ import MovieDetail from './components/movieDetail/MovieDetail';
 import Header from './components/header/Header';
 import { Route, Redirect } from 'react-router-dom';
 import { findMovie, allMovies } from './components/ApiCalls'
-import MoviePoster from './components/moviePoster/MoviePoster';
-import {formatMovieDetails} from './components/Utils'
 
 class App extends Component {
   constructor() {
