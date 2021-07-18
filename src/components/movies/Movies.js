@@ -3,7 +3,6 @@ import MoviePoster from '../moviePoster/MoviePoster';
 import './Movies.css';
 
 const Movies = ({findMovie, movies}) => {
-  console.log(findMovie, ' :findMovie inside Movies.js');
   const movieCards = movies.map(movie => {
     return (
       <MoviePoster

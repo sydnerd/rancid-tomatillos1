@@ -1,17 +1,8 @@
 header {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.search {
-  border-radius: 5px;
-  color: black;
-  height: 20px;
-  margin-top: 25px;
-  margin-right: 10px;
-  background-color: white;
-}
 
 .site-title {
   font-size: 2em;

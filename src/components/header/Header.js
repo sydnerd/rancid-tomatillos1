@@ -7,16 +7,18 @@ const Header = ({findMovie, renderMainPage}) => {
    return (
         <header>
         <Link to='/'>
-          <button className="home-button" onClick={renderMainPage}><img className="home-image" src={MyImage} /></button>
+          <button alt="home-button" aria-label="Home Button" className="home-button" onClick={renderMainPage}>
+            <img alt="home button" className="home-image" src={MyImage} />
+          </button>
         </Link>
         <h1 className="site-title">Rancid Tomatillos</h1>
-        <input
+        {/* <input
           className = 'search'
           type='text'
           placeholder='search movies'
           name= 'searchInput'
-          // value={this.state.movies}
-        />
+          value={this.state.movies}
+        /> */}
       </header>
   )
 }

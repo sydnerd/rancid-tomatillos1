@@ -1,9 +1,7 @@
 import React from 'react';
 import './MovieDetail.css';
 
-//problem is that .join(' ') method is being invoked on refresh-so its trying to apply array methods to something that doesn't exist
 const MovieDetail = ({movieInfo}) => {
-  console.log(movieInfo,' :movieInfo inside MovieDetails.js')
   let budget = movieInfo.budget ? `Budget: $${movieInfo.budget}` : false
   let revenue = movieInfo.revenue ? `Revenue: $${movieInfo.revenue}` : false
   let genre = movieInfo.genres ? `Genre: ${movieInfo.genres}` : false
