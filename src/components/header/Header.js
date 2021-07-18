@@ -9,7 +9,7 @@ const Header = ({findMovie, renderMainPage}) => {
         <Link to='/'>
           <button className="home-button" onClick={renderMainPage}><img className="home-image" src={MyImage} /></button>
         </Link>
-        <h1 className="siteTitle">Rancid Tomatillos</h1>
+        <h1 className="site-title">Rancid Tomatillos</h1>
         <input
           className = 'search'
           type='text'

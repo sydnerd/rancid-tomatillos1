@@ -6,6 +6,7 @@ const MovieDetail = ({movieInfo}) => {
   console.log(movieInfo,' :movieInfo inside MovieDetails.js')
   let budget = movieInfo.budget ? `Budget: $${movieInfo.budget}` : false
   let revenue = movieInfo.revenue ? `Revenue: $${movieInfo.revenue}` : false
+  let genre = movieInfo.genres ? `Genre: ${movieInfo.genres}` : false
 
   return (
     <section className='movie-detail-section'> 
@@ -16,12 +17,12 @@ const MovieDetail = ({movieInfo}) => {
         <h2 className="title">{movieInfo.title}</h2>
         <h3 className="tagline">{movieInfo.tagline}</h3>
         <p className="overview">{movieInfo.overview}</p>
-        <p className="genre">Genre: {movieInfo.genres}</p>
+        <p className="genre">{genre}</p>
         <p className="average-rating">Average Rating: {movieInfo.average_rating}</p> 
         <p className="budget">{budget}</p>
         <p className="revenue">{revenue}</p>
         <p className="runtime">Runtime: {movieInfo.runtime} min</p>
-        <p className="release-date">Relase Date: {movieInfo.release_date}</p>
+        <p className="release-date">Release Date: {movieInfo.release_date}</p>
       </div>
     </section> 
   )
