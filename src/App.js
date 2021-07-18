@@ -23,7 +23,7 @@ class App extends Component {
       .then(data=> {
         this.setState({movies: data.movies})
       })
-      .catch(() => this.setState({error: "Something went wrong!"}))
+      .catch(() => this.setState({error: "We're experiencing server technical difficulties, please check back again later!"}))
     }
     
     getMovies = (newMovie) => {
@@ -37,7 +37,7 @@ class App extends Component {
     updateMovieID = (id) => {
       findMovie(id)
         .then(data => this.setState({movieID: data.movie}))
-        .catch(() => this.setState({error: "Something went wrong!"}))
+        .catch(() => this.setState({error: "We're experiencing server technical difficulties, please check back again later!"}))
     }
 
     render() {

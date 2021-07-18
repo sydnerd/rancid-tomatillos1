@@ -14,6 +14,7 @@
 .title {
   display: flex;
   justify-content: center;
+  text-decoration: underline;
 }
 
 .overview {

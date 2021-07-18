@@ -4,7 +4,7 @@ import './MovieDetail.css';
 const MovieDetail = ({movieInfo}) => {
   let budget = movieInfo.budget ? `Budget: $${movieInfo.budget}` : false
   let revenue = movieInfo.revenue ? `Revenue: $${movieInfo.revenue}` : false
-  let genre = movieInfo.genres ? `Genre: ${movieInfo.genres}` : false
+  let genre = movieInfo.genres ? `Genre(s): ${movieInfo.genres}` : false
 
   return (
     <section className='movie-detail-section'> 
