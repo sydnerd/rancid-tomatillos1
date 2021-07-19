@@ -23,12 +23,12 @@ To solidify and demonstrate the understanding of:
 **[Back to top](#table-of-contents)**
 
 ## How does this work?
-![Gif of APP]()
+![Gif of APP](https://media.giphy.com/media/JJAdNHceL4ox0ltyQe/giphy.gif)
 
 * By selecting a poster on the main page, it will redirect you to the detail page about the selected with a home button to return to the main page.
 
 
-GitHub Page Link: https://github.com/sydnerd/Rancid-Tomatillos1
+GitHub Page Link: https://github.com/sydnerd/Rancid-Tomatillos1<br>
 Github Pages Deployed Link: https://sydnerd.github.io/rancid-tomatillos1
 
 **[Back to top](#table-of-contents)**
@@ -43,36 +43,34 @@ Github Pages Deployed Link: https://sydnerd.github.io/rancid-tomatillos1
 <p align="left">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript image" /><br>
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github image" /><br>
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-yjlip&psig=AOvVaw0DfwzTPnwFJcJM71eiyiea&ust=1626809313439000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJi_5Ivv7_ECFQAAAAAdAAAAABAI" alt="React image" /><br>
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdocs.cypress.io%2Fguides%2Ftooling%2Fvisual-testing&psig=AOvVaw3YA3o71fUOSmiHe7RXFlJX&ust=1626809439866000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjq18nv7_ECFQAAAAAdAAAAABAI" alt="Cypress image"
+  <img src="https://github.com/tkswann2/tech-logos/blob/master/react.png" alt="React image" width="35"/> React<br>
+  <img src="https://img.shields.io/badge/cy-press-black" alt="Cypress image"
 </p>
 
 ## Project Reflection
 
 ##### Wins
-* Create an app that has multiple classes with ES6 functions manipulating double datasets.
-* GET/POST fetches with a local host API
-
-##### Challenges
-* Manipulating the double datasets
-* Trying to create DRY code.
+* Code React app using Cypress testing
+* 100% Accessability
 
 #### Future Features
-* Option for manager to oversee hotel
+* Live search box for movies
+* Embed youtube trailers for movies
+* Login Page
 
 ## Credits
 #### Authors
 <table>
      <tr>
-          <td> Steven Berg <a href="saberg1.github.io/ideabox-boilerplate/">GH</td>
+          <td> Sydney Bear <a href="https://github.com/sydnerd">GH</td>
+          <td> Steven Berg <a href="saberg1.github.io/saberg1">GH</td>
       </tr>
-      </tr>
-<td><img src="https://avatars.githubusercontent.com/u/27789047?s=400&u=c6ff851d568c1206e3440d76cae997d5312785be&v=4" alt="Steven GH img"
+ <td><img src="https://avatars.githubusercontent.com/u/78241098?v=4" alt='Sydney GH image' width="150" height="auto" /></td>
+<td><img src="https://avatars.githubusercontent.com/u/27789047?s=400&u=c6ff851d568c1206e3440d76cae997d5312785be&v=4" alt="Steven GH image"
 width="150" height="auto" /></td>
-    </tr>
 </table>
 
 **************************************************************************
 ###### This project was created for [Turing School of Software and Design](https://turing.edu/)
-###### 2021/06/16
+###### 2021/07/19
 **[Back to top](#table-of-contents)**
