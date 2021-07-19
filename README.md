@@ -1,4 +1,4 @@
-# Overlook
+# Rancid Tomatillos
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
 - [Features](#features)
