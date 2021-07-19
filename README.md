@@ -43,8 +43,8 @@ Github Pages Deployed Link: https://sydnerd.github.io/rancid-tomatillos1
 <p align="left">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript image" /><br>
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github image" /><br>
-  <img src="https://github.com/tkswann2/tech-logos/blob/master/react.png" alt="React image" width="35"/> React<br>
-  <img src="https://img.shields.io/badge/cy-press-black" alt="Cypress image"
+  <img src="https://github.com/tkswann2/tech-logos/blob/master/react.png" alt="React image" width="30"/> React<br>
+  <img src="https://img.shields.io/badge/cy-press-black" alt="Cypress image" width="80" />
 </p>
 
 ## Project Reflection
