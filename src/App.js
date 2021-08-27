@@ -56,7 +56,7 @@ class App extends Component {
           <Route path={`/:id`}  render={ () => {
             return <MovieDetail movieInfo = {this.state.movieID} />
           }}/>
-          <Redirect to={'/'} />
+          <Redirect to={'/rancid-tomatillos1'} />
         </main>
       )
     };
